@@ -11,13 +11,15 @@ const TodoList = () => {
       ...todos,
       {
         id: todos.length,
-        todo: name
+        todo: name,
+        isComplete: false
       }
     ]);
   };
 
   const getName = e => {
     e.preventDefault();
+    if (!name) return;
     setQuery(name);
     setName("");
     console.log(name);
